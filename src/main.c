@@ -174,12 +174,14 @@ static void write_makefile(){
     char *buf;
     asprintf(&buf, makefile, proj_name);
     bm_log_info("Wriiting stuff to makefile\n");
-    fwrite(buf, 1, strlen(makefile), mfile);
+    fwrite(buf, 1, strlen(buf), mfile);
     fclose(mfile);
     free(buf);
     free(mfile_path);
+    free(makefile);
   }else{
     bm_log_err("Cannot create makefile\n");
+    free(makefile);
     exit(EXIT_FAILURE);
   }
 }
