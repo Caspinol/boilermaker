@@ -1,4 +1,5 @@
 RM=/bin/rm
+MKDIR=/bin/mkdir -p
 GCC=gcc
 
 NAME=boilermaker
@@ -20,6 +21,7 @@ $(BIN)/$(NAME): $(O)
 	@echo "..done"
 
 $(BUILD)/%.o: $(SRC)/%.c
+	@$(MKDIR) $(BUILD) $(BIN)
 	@$(GCC) $(CFLAGS) -c -o $@ $<
 	@echo "Compilation of $< finished"
 

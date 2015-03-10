@@ -2,20 +2,20 @@
 #include <stdarg.h>
 #include "inc/log.h"
 
-static void log(FILE *f, const char *fmt, va_list args){
+static void bm_log(FILE *f, char const *fmt, va_list args){
   vfprintf(f, fmt, args);
 }
 
-void bm_log_err(const char *fmt, ...){
+void bm_log_err(char const *fmt, ...){
   va_list args;
   va_start(args, fmt);
-  log(stderr, fmt, args);
+  bm_log(stderr, fmt, args);
   va_end(args);
 }
 
-void bm_log_info(const char *fmt, ...){
+void bm_log_info(char const *fmt, ...){
   va_list args;
   va_start(args, fmt);
-  log(stdout, fmt, args);
+  bm_log(stdout, fmt, args);
   va_end(args);
 }
