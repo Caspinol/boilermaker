@@ -112,7 +112,7 @@ static void write_license(){
 
 static void write_readme(){
   char *readme_path;
-  asprintf(&readme_path, "%s/%s", proj_name, "README");
+  asprintf(&readme_path, "%s/%s", proj_name, "README.md");
   asprintf(&cmd, "touch %s >/dev/null 2>&1", readme_path);
   system(cmd);
   bm_log_info("Readme path: [%s]\n", readme_path);
