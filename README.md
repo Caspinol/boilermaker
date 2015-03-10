@@ -1,5 +1,5 @@
 BOILERMAKER - quick C project directory setup
-==========================================
+===========
 Creates the followng directory stucture:
 ```
 project_name
